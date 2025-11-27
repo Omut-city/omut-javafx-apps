@@ -12,13 +12,13 @@
 
     <top>
         <MenuBar>
-            <Menu text="Файл">
-                <MenuItem text="Новый" onAction="#onNew"/>
-                <MenuItem text="Открыть" onAction="#onOpen"/>
-                <MenuItem text="Выход" onAction="#onExit"/>
+            <Menu text="File">
+                <MenuItem text="New" onAction="#onNew"/>
+                <MenuItem text="Open" onAction="#onOpen"/>
+                <MenuItem text="Exit" onAction="#onExit"/>
             </Menu>
-            <Menu text="Помощь">
-                <MenuItem text="О программе" onAction="#onAbout"/>
+            <Menu text="About">
+                <MenuItem text="About" onAction="#onAbout"/>
             </Menu>
         </MenuBar>
     </top>
