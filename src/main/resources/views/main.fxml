@@ -2,10 +2,25 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.demo.controllers.MainController"
       spacing="15" alignment="CENTER">
+
+    <!-- Меню -->
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem text="Новый" onAction="#onNew"/>
+            <MenuItem text="Открыть" onAction="#onOpen"/>
+            <MenuItem text="Выход" onAction="#onExit"/>
+        </Menu>
+        <Menu text="Помощь">
+            <MenuItem text="О программе" onAction="#onAbout"/>
+        </Menu>
+    </MenuBar>
 
     <Label fx:id="label" text="Hello!" style="-fx-font-size:22px;"/>
     <Button text="Push Me!" onAction="#onClick"/>
