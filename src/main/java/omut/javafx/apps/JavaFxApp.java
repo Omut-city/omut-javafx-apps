@@ -1,5 +1,5 @@
 
-package com.example.demo;
+package omut.javafx.apps;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

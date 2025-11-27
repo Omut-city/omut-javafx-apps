@@ -1,5 +1,5 @@
 
-package com.example.demo.controllers;
+package omut.javafx.apps.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

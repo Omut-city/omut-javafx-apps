@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.demo.controllers.MainController">
+            fx:controller="omut.javafx.apps.controllers.MainController">
 
     <top>
         <MenuBar>

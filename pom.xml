@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>javafx-springboot-app</artifactId>
+    <artifactId>omut-javafx-apps</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -54,7 +54,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.example.demo.JavaFxApp</mainClass>
+                    <mainClass>omut.javafx.apps.JavaFxApp</mainClass>
                     <executable>C:/Java/jdk-25/bin/java.exe</executable>
                 </configuration>
             </plugin>
