@@ -17,6 +17,9 @@
                 <MenuItem text="Open" onAction="#onOpen"/>
                 <MenuItem text="Exit" onAction="#onExit"/>
             </Menu>
+            <Menu text="Games">
+                <MenuItem text="TicTacToe" onAction="#openTicTacToe"/>
+            </Menu>
             <Menu text="About">
                 <MenuItem text="About" onAction="#onAbout"/>
             </Menu>

@@ -2,8 +2,11 @@
 package omut.javafx.apps.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -38,5 +41,14 @@ public class MainController {
         alert.setHeaderText(null);
         alert.setContentText("Application JavaFX + Spring Boot");
         alert.showAndWait();
+    }
+
+    @FXML
+    public void openTicTacToe() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ticTacToe.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(loader.load()));
+        stage.setTitle("Tic Tac Toe");
+        stage.show();
     }
 }
