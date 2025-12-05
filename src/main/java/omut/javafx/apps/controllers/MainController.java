@@ -48,6 +48,11 @@ public class MainController {
     }
 
     @FXML
+    public void openTicTacToe2() throws Exception {
+        load("/views/ticTacToe2.fxml", "Tic Tac Toe 2");
+    }
+
+    @FXML
     public void openMatrixEffect() throws Exception {
         load("/views/matrixEffect.fxml", "Matrix Effect");
     }
