@@ -1,4 +1,3 @@
-
 package omut.javafx.apps.controllers;
 
 import javafx.fxml.FXML;
@@ -45,10 +44,19 @@ public class MainController {
 
     @FXML
     public void openTicTacToe() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ticTacToe.fxml"));
+        load("/views/ticTacToe.fxml", "Tic Tac Toe");
+    }
+
+    @FXML
+    public void openMatrixEffect() throws Exception {
+        load("/views/matrixEffect.fxml", "Matrix Effect");
+    }
+
+    private void load(String resource, String title) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
         Stage stage = new Stage();
         stage.setScene(new Scene(loader.load()));
-        stage.setTitle("Tic Tac Toe");
+        stage.setTitle(title);
         stage.show();
     }
 }

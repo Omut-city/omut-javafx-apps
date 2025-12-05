@@ -20,6 +20,9 @@
             <Menu text="Games">
                 <MenuItem text="TicTacToe" onAction="#openTicTacToe"/>
             </Menu>
+            <Menu text="Screensavers">
+                <MenuItem text="Matrix Splash" onAction="#openMatrixEffect"/>
+            </Menu>
             <Menu text="About">
                 <MenuItem text="About" onAction="#onAbout"/>
             </Menu>
