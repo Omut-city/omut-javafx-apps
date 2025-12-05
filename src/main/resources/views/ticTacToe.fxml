@@ -8,13 +8,13 @@
           hgap="5" vgap="5"
           alignment="CENTER">
 
-    <Button fx:id="b00" onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b01" onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b02" onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b10" onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b11" onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b12" onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b20" onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b21" onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
-    <Button fx:id="b22" onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="50" prefHeight="50"/>
+    <Button onAction="#handleButton" GridPane.rowIndex="2" GridPane.columnIndex="2" prefWidth="50" prefHeight="50"/>
 </GridPane>
