@@ -39,7 +39,7 @@
 
             <VBox spacing="6" HBox.hgrow="ALWAYS">
                 <children>
-                    <Label text="Exit"/>
+                    <Label text="Result"/>
                     <TextArea fx:id="outputArea" promptText="Result..."
                               wrapText="true" editable="false" VBox.vgrow="ALWAYS"/>
                 </children>
