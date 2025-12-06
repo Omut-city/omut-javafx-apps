@@ -57,6 +57,11 @@ public class MainController {
         load("/views/matrixEffect.fxml", "Matrix Effect");
     }
 
+    @FXML
+    public void openBase64EncoderDecoder() throws Exception {
+        load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
+    }
+
     private void load(String resource, String title) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
         Stage stage = new Stage();

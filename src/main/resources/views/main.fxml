@@ -24,6 +24,9 @@
             <Menu text="Screensavers">
                 <MenuItem text="Matrix Splash" onAction="#openMatrixEffect"/>
             </Menu>
+            <Menu text="Utils">
+                <MenuItem text="Base64 Encoder/Decoder" onAction="#openBase64EncoderDecoder"/>
+            </Menu>
             <Menu text="About">
                 <MenuItem text="About" onAction="#onAbout"/>
             </Menu>
