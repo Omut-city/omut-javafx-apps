@@ -62,6 +62,11 @@ public class MainController {
         load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
     }
 
+    @FXML
+    public void openJwtDecoder() throws Exception {
+        load("/views/jwtDecoder.fxml", "Jwt Decoder");
+    }
+
     private void load(String resource, String title) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
         Stage stage = new Stage();

@@ -26,6 +26,7 @@
             </Menu>
             <Menu text="Utils">
                 <MenuItem text="Base64 Encoder/Decoder" onAction="#openBase64EncoderDecoder"/>
+                <MenuItem text="Jwt Decoder" onAction="#openJwtDecoder"/>
             </Menu>
             <Menu text="About">
                 <MenuItem text="About" onAction="#onAbout"/>
