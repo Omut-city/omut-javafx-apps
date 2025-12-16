@@ -2,10 +2,12 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<VBox fx:controller="omut.javafx.apps.controllers.JwtDecoderController"
-      xmlns:fx="http://javafx.com/fxml" spacing="10">
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="omut.javafx.apps.controllers.JwtDecoderController"
+      spacing="10">
+
     <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
     <Label text="Input JSON:" />

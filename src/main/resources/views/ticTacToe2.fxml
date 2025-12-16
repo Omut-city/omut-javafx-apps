@@ -10,7 +10,8 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="omut.javafx.apps.controllers.TicTacToe2Controller"
-            prefWidth="360" prefHeight="420">
+            prefWidth="360"
+            prefHeight="420">
 
     <center>
         <GridPane fx:id="grid"

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml/1"
           fx:controller="omut.javafx.apps.controllers.TicTacToeController"
-          hgap="5" vgap="5"
+          hgap="5"
+          vgap="5"
           alignment="CENTER">
 
     <Button onAction="#handleButton" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="50" prefHeight="50"/>

@@ -1,20 +1,15 @@
 package omut.javafx.apps.controllers;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
 import omut.javafx.apps.components.TicTacToe2;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 @Controller
 public class TicTacToe2Controller implements Initializable {
