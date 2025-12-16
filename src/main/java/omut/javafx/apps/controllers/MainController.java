@@ -58,6 +58,11 @@ public class MainController {
     }
 
     @FXML
+    public void openJavaFx3DFirstScene() throws Exception {
+        load("/views/javaFx3DFirstScene.fxml", "JavaFX 3D First Scene");
+    }
+
+    @FXML
     public void openBase64EncoderDecoder() throws Exception {
         load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
     }
