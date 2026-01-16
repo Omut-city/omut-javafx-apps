@@ -4,9 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.AnchorPane;
 import omut.javafx.apps.components.MatrixEffect;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Controller
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class MatrixEffectController {
 
     @FXML private Canvas canvas;

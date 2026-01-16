@@ -2,9 +2,12 @@ package omut.javafx.apps.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Controller
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class TicTacToeController {
 
     private boolean xTurn = true;

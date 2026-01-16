@@ -4,7 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import java.util.Base64;
 import org.json.JSONObject;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Example input:
@@ -13,7 +15,8 @@ import org.springframework.stereotype.Controller;
  *   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoicmVmcmVzaCJ9.dummy_signature"
  * }
  */
-@Controller
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class JwtDecoderController {
 
     @FXML

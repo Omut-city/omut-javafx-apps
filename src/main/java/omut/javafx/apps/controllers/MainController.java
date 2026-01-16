@@ -1,16 +1,21 @@
 package omut.javafx.apps.controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
+import omut.javafx.apps.service.LoadFxmlService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MainController {
 
+    private final LoadFxmlService loadFxmlService;
+
+    public MainController(
+            LoadFxmlService loadFxmlService
+    ) {
+        this.loadFxmlService = loadFxmlService;
+    }
     @FXML private Label label;
 
     @FXML
@@ -44,39 +49,32 @@ public class MainController {
 
     @FXML
     public void openTicTacToe() throws Exception {
-        load("/views/ticTacToe.fxml", "Tic Tac Toe");
+        loadFxmlService.load("/views/ticTacToe.fxml", "Tic Tac Toe");
     }
 
     @FXML
     public void openTicTacToe2() throws Exception {
-        load("/views/ticTacToe2.fxml", "Tic Tac Toe 2");
+        loadFxmlService.load("/views/ticTacToe2.fxml", "Tic Tac Toe 2");
     }
 
     @FXML
     public void openMatrixEffect() throws Exception {
-        load("/views/matrixEffect.fxml", "Matrix Effect");
+        loadFxmlService.load("/views/matrixEffect.fxml", "Matrix Effect");
     }
 
     @FXML
     public void openJavaFx3DFirstScene() throws Exception {
-        load("/views/javaFx3DFirstScene.fxml", "JavaFX 3D First Scene");
+        loadFxmlService.load("/views/javaFx3DFirstScene.fxml", "JavaFX 3D First Scene");
     }
 
     @FXML
     public void openBase64EncoderDecoder() throws Exception {
-        load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
+        loadFxmlService.load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
     }
 
     @FXML
     public void openJwtDecoder() throws Exception {
-        load("/views/jwtDecoder.fxml", "Jwt Decoder");
+        loadFxmlService.load("/views/jwtDecoder.fxml", "Jwt Decoder");
     }
 
-    private void load(String resource, String title) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(loader.load()));
-        stage.setTitle(title);
-        stage.show();
-    }
 }
