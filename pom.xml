@@ -10,6 +10,8 @@
     <version>1.0.0</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>25</java.version>
         <spring.boot.version>3.5.8</spring.boot.version>
         <javafx.version>25.0.1</javafx.version>
@@ -46,12 +48,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.1</version>
-                <configuration>
-                    <source>25</source>
-                    <target>25</target>
-                    <fork>true</fork>
-                    <executable>c:/Java/jdk-25/bin/javac</executable>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -60,7 +56,6 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>omut.javafx.apps.JavaFxApp</mainClass>
-                    <executable>C:/Java/jdk-25/bin/java.exe</executable>
                 </configuration>
             </plugin>
         </plugins>

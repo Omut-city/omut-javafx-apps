@@ -74,9 +74,7 @@ public class Base64EncoderDecoderController {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setTitle("About");
         a.setHeaderText("Base64 Encoder / Decoder");
-        a.setContentText("""
-                JavaFX application for encoding/decoding Base64 (UTF-8).
-                """);
+        a.setContentText("JavaFX application for encoding/decoding Base64 (UTF-8).");
         a.showAndWait();
     }
 
