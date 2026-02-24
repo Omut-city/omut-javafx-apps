@@ -58,6 +58,11 @@ public class MainController {
     }
 
     @FXML
+    public void openBomberMan() throws Exception {
+        loadFxmlService.load("/views/bomberman.fxml", "Bomber Man");
+    }
+
+    @FXML
     public void openMatrixEffect() throws Exception {
         loadFxmlService.load("/views/matrixEffect.fxml", "Matrix Effect");
     }
