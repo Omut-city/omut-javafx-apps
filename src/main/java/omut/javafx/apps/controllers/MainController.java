@@ -63,6 +63,11 @@ public class MainController {
     }
 
     @FXML
+    public void openCheckers() throws Exception {
+        loadFxmlService.load("/views/checkers.fxml", "Checkers");
+    }
+
+    @FXML
     public void openMatrixEffect() throws Exception {
         loadFxmlService.load("/views/matrixEffect.fxml", "Matrix Effect");
     }
