@@ -8,9 +8,14 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.Region?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="omut.javafx.apps.controllers.MainController">
+            fx:controller="omut.javafx.apps.controllers.MainController"
+            stylesheets="@/css/style.css">
 
     <top>
         <MenuBar>
@@ -45,7 +50,42 @@
         <VBox spacing="10" alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
             <Label fx:id="label" text="Hello!" style="-fx-font-size:22px;"/>
             <Button text="Push Me!" onAction="#onClick"/>
+            <Button text="Start Task" onAction="#startLongTask"/>
         </VBox>
     </center>
+    
+    <bottom>
+        <HBox spacing="10"
+              alignment="CENTER_LEFT"
+              styleClass="status-bar">
 
+            <padding>
+                <Insets top="4" right="10" bottom="4" left="10"/>
+            </padding>
+
+            <Label fx:id="statusLabel"
+                   text="Ready"
+                   minWidth="70"
+                   styleClass="status-label"/>
+
+            <ProgressBar fx:id="progressBar"
+                         prefWidth="180"
+                         visible="false"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="rightStatusLabel"
+                   text="Idle"
+                   minWidth="60"
+                   alignment="CENTER"
+                   styleClass="status-right"/>
+
+            <Label fx:id="timeLabel"
+                   text="--:--:--"
+                   minWidth="50"
+                   alignment="CENTER"
+                   styleClass="status-right"/>
+
+        </HBox>
+    </bottom>
 </BorderPane>

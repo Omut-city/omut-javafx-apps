@@ -1,0 +1,17 @@
+.table-row-cell.paid-row {
+    -fx-background-color: pink;
+}
+
+.status-bar {
+    -fx-background-color: #f3f3f3;
+    -fx-border-color: #d0d0d0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-label {
+    -fx-alignment: center-left;
+}
+
+.status-right {
+    -fx-alignment: center;
+}
