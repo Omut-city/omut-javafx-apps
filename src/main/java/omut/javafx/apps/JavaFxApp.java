@@ -1,4 +1,3 @@
-
 package omut.javafx.apps;
 
 import javafx.application.Application;
@@ -11,6 +10,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class JavaFxApp extends Application {
 
     private ConfigurableApplicationContext context;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void init() {
