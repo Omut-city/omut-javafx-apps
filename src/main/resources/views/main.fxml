@@ -29,6 +29,7 @@
                 <MenuItem text="Tic Tac Toe 2" onAction="#openTicTacToe2"/>
                 <MenuItem text="Bomber Man" onAction="#openBomberMan"/>
                 <MenuItem text="Checkers" onAction="#openCheckers"/>
+                <MenuItem text="Minesweeper" onAction="#openMinesweeper"/>
             </Menu>
             <Menu text="Screensavers">
                 <MenuItem text="Matrix Splash" onAction="#openMatrixEffect"/>

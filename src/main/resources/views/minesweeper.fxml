@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="omut.javafx.apps.controllers.MinesweeperController"
+      prefHeight="400.0" prefWidth="600.0"
+      stylesheets="@/css/minesweeper.css">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="20" alignment="CENTER">
+        <padding>
+            <Insets top="5" right="5" bottom="5" left="5"/>
+        </padding>
+
+        <Label fx:id="minesLabel" text="Mines: 40" styleClass="info-label"/>
+        <Button fx:id="resetButton" text="New game" onAction="#handleReset"
+                styleClass="reset-button"/>
+        <Label fx:id="timerLabel" text="Time: 00:00" styleClass="info-label"/>
+    </HBox>
+
+    <GridPane fx:id="gridPane" hgap="1" vgap="1" alignment="CENTER"/>
+
+</VBox>

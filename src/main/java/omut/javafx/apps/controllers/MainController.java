@@ -108,6 +108,11 @@ public class MainController {
     }
 
     @FXML
+    public void openMinesweeper() throws Exception {
+        loadFxmlService.load("/views/minesweeper.fxml", "Minesweeper");
+    }
+
+    @FXML
     public void openMatrixEffect() throws Exception {
         loadFxmlService.load("/views/matrixEffect.fxml", "Matrix Effect");
     }
