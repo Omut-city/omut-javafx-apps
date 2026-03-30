@@ -14,9 +14,9 @@
 
     <StackPane fx:id="overlay" visible="false" style="-fx-background-color: rgba(0,0,0,0.5);">
         <VBox alignment="CENTER" spacing="20">
-            <Label fx:id="gameOverLabel" text="GAME OVER"
+            <Label fx:id="gameOverLabel" text="%bomberman.gameover"
                    textFill="RED" style="-fx-font-size: 48px;" alignment="CENTER"/>
-            <Button fx:id="startButton" text="Restart" onAction="#restartGame"/>
+            <Button fx:id="startButton" text="%bomberman.restart" onAction="#restartGame"/>
         </VBox>
     </StackPane>
 

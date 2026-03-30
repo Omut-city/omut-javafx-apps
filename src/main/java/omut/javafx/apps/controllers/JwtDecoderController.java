@@ -3,6 +3,8 @@ package omut.javafx.apps.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import java.util.Base64;
+import java.util.ResourceBundle;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -26,6 +28,9 @@ public class JwtDecoderController {
     private TextArea outputArea;
 
     @FXML
+    private ResourceBundle resources;
+
+    @FXML
     public void onDecodeAccess() {
         decodeToken("access_token");
     }
@@ -43,7 +48,7 @@ public class JwtDecoderController {
             JSONObject payloadJson = new JSONObject(payload);
             outputArea.setText(payloadJson.toString(4));
         } catch (Exception ex) {
-            outputArea.setText("Error: " + ex.getMessage());
+            outputArea.setText(resources.getString("jwt.error") + " " + ex.getMessage());
         }
     }
 

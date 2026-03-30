@@ -11,14 +11,14 @@
     <top>
         <MenuBar>
             <menus>
-                <Menu text="File">
+                <Menu text="%menu.file">
                     <items>
-                        <MenuItem text="Exit" onAction="#onExit"/>
+                        <MenuItem text="%menu.file.exit" onAction="#onExit"/>
                     </items>
                 </Menu>
-                <Menu text="Help">
+                <Menu text="%menu.about">
                     <items>
-                        <MenuItem text="About" onAction="#onAbout"/>
+                        <MenuItem text="%menu.about.about" onAction="#onAbout"/>
                     </items>
                 </Menu>
             </menus>
@@ -31,16 +31,16 @@
 
             <VBox spacing="6" HBox.hgrow="ALWAYS">
                 <children>
-                    <Label text="Input"/>
-                    <TextArea fx:id="inputArea" promptText="Input text or Base64 here..."
+                    <Label text="%base64.input"/>
+                    <TextArea fx:id="inputArea" promptText="%base64.prompt.input"
                               wrapText="true" VBox.vgrow="ALWAYS"/>
                 </children>
             </VBox>
 
             <VBox spacing="6" HBox.hgrow="ALWAYS">
                 <children>
-                    <Label text="Result"/>
-                    <TextArea fx:id="outputArea" promptText="Result..."
+                    <Label text="%base64.result"/>
+                    <TextArea fx:id="outputArea" promptText="%base64.prompt.result"
                               wrapText="true" editable="false" VBox.vgrow="ALWAYS"/>
                 </children>
             </VBox>
@@ -52,11 +52,11 @@
         <HBox alignment="CENTER" spacing="8" BorderPane.alignment="CENTER">
             <padding><Insets top="8" bottom="8"/></padding>
 
-            <Button text="Encode → Base64" onAction="#encodeInput"/>
-            <Button text="Decode ← Base64" onAction="#decodeInput"/>
-            <Button text="Swap" onAction="#swapAreas"/>
-            <Button text="Copy result" onAction="#copyOutput"/>
-            <Button text="Clear all" onAction="#clearAll"/>
+            <Button text="%base64.encode" onAction="#encodeInput"/>
+            <Button text="%base64.decode" onAction="#decodeInput"/>
+            <Button text="%base64.swap" onAction="#swapAreas"/>
+            <Button text="%base64.copy" onAction="#copyOutput"/>
+            <Button text="%base64.clear" onAction="#clearAll"/>
 
         </HBox>
     </bottom>

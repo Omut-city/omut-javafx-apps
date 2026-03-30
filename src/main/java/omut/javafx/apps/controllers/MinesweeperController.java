@@ -48,8 +48,11 @@ public class MinesweeperController implements Initializable {
     private Timeline timeline;
     private int secondsElapsed = 0;
 
+    private ResourceBundle resources;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        this.resources = resources;
         setupTimer();
         newGame();
     }
@@ -297,25 +300,25 @@ public class MinesweeperController implements Initializable {
 
     private void showGameOverMessage() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Over");
+        alert.setTitle(resources.getString("minesweeper.lose"));
         alert.setHeaderText(null);
-        alert.setContentText("Boom! You're dead!");
+        alert.setContentText(resources.getString("minesweeper.lose"));
         alert.showAndWait();
     }
 
     private void showWinMessage() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Win!");
+        alert.setTitle(resources.getString("minesweeper.win"));
         alert.setHeaderText(null);
-        alert.setContentText("Congratulations! You win!");
+        alert.setContentText(resources.getString("minesweeper.win"));
         alert.showAndWait();
     }
 
     private void updateMinesLabel() {
-        minesLabel.setText("Mines: " + remainingMines);
+        minesLabel.setText(resources.getString("minesweeper.mines") + " " + remainingMines);
     }
 
     private void updateTimerLabel() {
-        timerLabel.setText(String.format("Time: %02d:%02d", secondsElapsed / 60, secondsElapsed % 60));
+        timerLabel.setText(String.format(resources.getString("minesweeper.time") + " %02d:%02d", secondsElapsed / 60, secondsElapsed % 60));
     }
 }

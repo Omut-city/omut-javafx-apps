@@ -10,19 +10,19 @@
 
     <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
-    <Label text="Input JSON:" />
+    <Label text="%jwt.input" />
 
     <TextArea fx:id="inputArea" VBox.vgrow="ALWAYS"
-              promptText="Input JSON with tokens here..." wrapText="true"/>
+              promptText="%jwt.prompt" wrapText="true"/>
 
     <HBox spacing="10">
-        <Button text="Decode Access Token"
+        <Button text="%jwt.decode.access"
                 onAction="#onDecodeAccess"/>
-        <Button text="Decode Refresh Token"
+        <Button text="%jwt.decode.refresh"
                 onAction="#onDecodeRefresh"/>
     </HBox>
 
-    <Label text="Decoded Payload:" />
+    <Label text="%jwt.output" />
 
     <TextArea fx:id="outputArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
 

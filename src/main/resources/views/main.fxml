@@ -19,42 +19,42 @@
 
     <top>
         <MenuBar>
-            <Menu text="File">
-                <MenuItem text="New" onAction="#onNew"/>
-                <MenuItem text="Open" onAction="#onOpen"/>
-                <MenuItem text="Exit" onAction="#onExit"/>
+            <Menu fx:id="fileMenu" text="%menu.file">
+                <MenuItem fx:id="newItem" text="%menu.file.new" onAction="#onNew"/>
+                <MenuItem fx:id="openItem" text="%menu.file.open" onAction="#onOpen"/>
+                <MenuItem fx:id="exitItem" text="%menu.file.exit" onAction="#onExit"/>
             </Menu>
-            <Menu text="Games">
-                <MenuItem text="Tic Tac Toe" onAction="#openTicTacToe"/>
-                <MenuItem text="Tic Tac Toe 2" onAction="#openTicTacToe2"/>
-                <MenuItem text="Bomber Man" onAction="#openBomberMan"/>
-                <MenuItem text="Checkers" onAction="#openCheckers"/>
-                <MenuItem text="Minesweeper" onAction="#openMinesweeper"/>
+            <Menu fx:id="gamesMenu" text="%menu.games">
+                <MenuItem fx:id="tictactoeItem" text="%menu.games.tictactoe" onAction="#openTicTacToe"/>
+                <MenuItem fx:id="tictactoe2Item" text="%menu.games.tictactoe2" onAction="#openTicTacToe2"/>
+                <MenuItem fx:id="bombermanItem" text="%menu.games.bomberman" onAction="#openBomberMan"/>
+                <MenuItem fx:id="checkersItem" text="%menu.games.checkers" onAction="#openCheckers"/>
+                <MenuItem fx:id="minesweeperItem" text="%menu.games.minesweeper" onAction="#openMinesweeper"/>
             </Menu>
-            <Menu text="Screensavers">
-                <MenuItem text="Matrix Splash" onAction="#openMatrixEffect"/>
+            <Menu fx:id="screensaversMenu" text="%menu.screensavers">
+                <MenuItem fx:id="matrixItem" text="%menu.screensavers.matrix" onAction="#openMatrixEffect"/>
             </Menu>
-            <Menu text="3D Scenes">
-                <MenuItem text="JavaFX 3D First Scene" onAction="#openJavaFx3DFirstScene"/>
+            <Menu fx:id="threeDMenu" text="%menu.3d">
+                <MenuItem fx:id="threeDFirstItem" text="%menu.3d.first" onAction="#openJavaFx3DFirstScene"/>
             </Menu>
-            <Menu text="Utils">
-                <MenuItem text="Base64 Encoder/Decoder" onAction="#openBase64EncoderDecoder"/>
-                <MenuItem text="Jwt Decoder" onAction="#openJwtDecoder"/>
+            <Menu fx:id="utilsMenu" text="%menu.utils">
+                <MenuItem fx:id="base64Item" text="%menu.utils.base64" onAction="#openBase64EncoderDecoder"/>
+                <MenuItem fx:id="jwtItem" text="%menu.utils.jwt" onAction="#openJwtDecoder"/>
             </Menu>
-            <Menu text="Settings">
-                <Menu fx:id="languageMenu" text="Language"/>
+            <Menu fx:id="settingsMenu" text="%menu.settings">
+                <Menu fx:id="languageMenu" text="%menu.settings.language"/>
             </Menu>
-            <Menu text="About">
-                <MenuItem text="About" onAction="#onAbout"/>
+            <Menu fx:id="aboutMenu" text="%menu.about">
+                <MenuItem fx:id="aboutItem" text="%menu.about.about" onAction="#onAbout"/>
             </Menu>
         </MenuBar>
     </top>
 
     <center>
-        <VBox spacing="10" alignment="CENTER" prefHeight="200.0" prefWidth="300.0">
-            <Label fx:id="label" text="Hello!" style="-fx-font-size:22px;"/>
-            <Button text="Push Me!" onAction="#onClick"/>
-            <Button text="Start Task" onAction="#startLongTask"/>
+        <VBox spacing="10" alignment="CENTER" prefHeight="200.0" prefWidth="690.0">
+            <Label fx:id="label" text="%label.hello" style="-fx-font-size:22px;"/>
+            <Button fx:id="pushMeButton" text="%button.pushme" onAction="#onClick"/>
+            <Button fx:id="startTaskButton" text="%button.starttask" onAction="#startLongTask"/>
         </VBox>
     </center>
     
@@ -68,7 +68,7 @@
             </padding>
 
             <Label fx:id="statusLabel"
-                   text="Ready"
+                   text="%status.ready"
                    minWidth="70"
                    styleClass="status-label"/>
 
@@ -85,7 +85,7 @@
                    styleClass="status-right"/>
 
             <Label fx:id="rightStatusLabel"
-                   text="Idle"
+                   text="%status.idle"
                    minWidth="60"
                    alignment="CENTER"
                    styleClass="status-right"/>

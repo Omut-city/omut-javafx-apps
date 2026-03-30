@@ -32,10 +32,11 @@ public class TicTacToe2Controller implements Initializable {
     private char[][] board = new char[SIZE][SIZE];
     private char currentPlayer = 'X';
     private boolean gameOver = false;
+    private ResourceBundle resources;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        this.resources = resourceBundle;
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
 
@@ -52,7 +53,7 @@ public class TicTacToe2Controller implements Initializable {
         }
 
         resetButton.setOnAction(e -> resetGame());
-        statusLabel.setText("Ход: X");
+        statusLabel.setText(resources.getString("tictactoe.turn") + " X");
     }
 
     private void handleMove(int row, int col) {
@@ -64,20 +65,20 @@ public class TicTacToe2Controller implements Initializable {
         cells[row][col].setDisable(true);
 
         if (checkWin(currentPlayer)) {
-            statusLabel.setText("Победил: " + currentPlayer);
+            statusLabel.setText(resources.getString("tictactoe.win") + " " + currentPlayer);
             gameOver = true;
             highlightWinningCells(currentPlayer);
             return;
         }
 
         if (isBoardFull()) {
-            statusLabel.setText("Ничья");
+            statusLabel.setText(resources.getString("tictactoe.draw"));
             gameOver = true;
             return;
         }
 
         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
-        statusLabel.setText("Ход: " + currentPlayer);
+        statusLabel.setText(resources.getString("tictactoe.turn") + " " + currentPlayer);
     }
 
     private boolean checkWin(char player) {

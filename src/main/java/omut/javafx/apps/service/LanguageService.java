@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import jakarta.annotation.PostConstruct;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 @Service
 public class LanguageService {
@@ -29,5 +30,9 @@ public class LanguageService {
 
     public ObjectProperty<Language> currentLanguageProperty() {
         return currentLanguage;
+    }
+
+    public ResourceBundle getBundle() {
+        return ResourceBundle.getBundle("i18n.messages", getCurrentLanguage().getLocale());
     }
 }

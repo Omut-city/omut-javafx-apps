@@ -3,11 +3,13 @@ package omut.javafx.apps.controllers;
 import java.time.format.DateTimeFormatter;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import omut.javafx.apps.model.Language;
 import omut.javafx.apps.service.LanguageService;
@@ -22,6 +24,9 @@ public class MainController {
 
     private final LoadFxmlService loadFxmlService;
     private final LanguageService languageService;
+
+    @FXML
+    private ResourceBundle resources;
 
     public MainController(
             LoadFxmlService loadFxmlService,
@@ -45,7 +50,73 @@ public class MainController {
     private Label languageLabel;
 
     @FXML
+    private Menu fileMenu;
+
+    @FXML
+    private MenuItem newItem;
+
+    @FXML
+    private MenuItem openItem;
+
+    @FXML
+    private MenuItem exitItem;
+
+    @FXML
+    private Menu gamesMenu;
+
+    @FXML
+    private MenuItem tictactoeItem;
+
+    @FXML
+    private MenuItem tictactoe2Item;
+
+    @FXML
+    private MenuItem bombermanItem;
+
+    @FXML
+    private MenuItem checkersItem;
+
+    @FXML
+    private MenuItem minesweeperItem;
+
+    @FXML
+    private Menu screensaversMenu;
+
+    @FXML
+    private MenuItem matrixItem;
+
+    @FXML
+    private Menu threeDMenu;
+
+    @FXML
+    private MenuItem threeDFirstItem;
+
+    @FXML
+    private Menu utilsMenu;
+
+    @FXML
+    private MenuItem base64Item;
+
+    @FXML
+    private MenuItem jwtItem;
+
+    @FXML
+    private Menu settingsMenu;
+
+    @FXML
     private Menu languageMenu;
+
+    @FXML
+    private Menu aboutMenu;
+
+    @FXML
+    private MenuItem aboutItem;
+
+    @FXML
+    private Button pushMeButton;
+
+    @FXML
+    private Button startTaskButton;
 
     @FXML
     private ProgressBar progressBar;
@@ -87,9 +158,56 @@ public class MainController {
 
         languageService.currentLanguageProperty().addListener((obs, oldLang, newLang) -> {
             updateLanguageIndicator(newLang);
+            updateTexts();
         });
 
         updateLanguageIndicator(languageService.getCurrentLanguage());
+    }
+
+    private void updateTexts() {
+        resources = languageService.getBundle();
+
+        // Main window title
+        Stage stage = (Stage) label.getScene().getWindow();
+        stage.setTitle(resources.getString("main.title"));
+
+        // Menus
+        fileMenu.setText(resources.getString("menu.file"));
+        newItem.setText(resources.getString("menu.file.new"));
+        openItem.setText(resources.getString("menu.file.open"));
+        exitItem.setText(resources.getString("menu.file.exit"));
+
+        gamesMenu.setText(resources.getString("menu.games"));
+        tictactoeItem.setText(resources.getString("menu.games.tictactoe"));
+        tictactoe2Item.setText(resources.getString("menu.games.tictactoe2"));
+        bombermanItem.setText(resources.getString("menu.games.bomberman"));
+        checkersItem.setText(resources.getString("menu.games.checkers"));
+        minesweeperItem.setText(resources.getString("menu.games.minesweeper"));
+
+        screensaversMenu.setText(resources.getString("menu.screensavers"));
+        matrixItem.setText(resources.getString("menu.screensavers.matrix"));
+
+        threeDMenu.setText(resources.getString("menu.3d"));
+        threeDFirstItem.setText(resources.getString("menu.3d.first"));
+
+        utilsMenu.setText(resources.getString("menu.utils"));
+        base64Item.setText(resources.getString("menu.utils.base64"));
+        jwtItem.setText(resources.getString("menu.utils.jwt"));
+
+        settingsMenu.setText(resources.getString("menu.settings"));
+        languageMenu.setText(resources.getString("menu.settings.language"));
+
+        aboutMenu.setText(resources.getString("menu.about"));
+        aboutItem.setText(resources.getString("menu.about.about"));
+
+        // Center
+        label.setText(resources.getString("label.hello"));
+        pushMeButton.setText(resources.getString("button.pushme"));
+        startTaskButton.setText(resources.getString("button.starttask"));
+
+        // Status bar
+        statusLabel.setText(resources.getString("status.ready"));
+        rightStatusLabel.setText(resources.getString("status.idle"));
     }
 
     private void updateLanguageIndicator(Language lang) {
@@ -103,18 +221,18 @@ public class MainController {
 
     @FXML
     public void onClick() {
-        label.setText("Spring + JavaFX are works!");
-        statusLabel.setText("Button clicked!");
+        label.setText(resources.getString("label.hello"));
+        statusLabel.setText(resources.getString("status.clicked"));
     }
 
     @FXML
     public void onNew() {
-        label.setText("New document!");
+        label.setText(resources.getString("status.new"));
     }
 
     @FXML
     public void onOpen() {
-        label.setText("Open document!");
+        label.setText(resources.getString("status.open"));
     }
 
     @FXML
@@ -125,55 +243,55 @@ public class MainController {
     @FXML
     public void onAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("About");
+        alert.setTitle(resources.getString("about.title"));
         alert.setHeaderText(null);
-        alert.setContentText("Application JavaFX + Spring Boot");
+        alert.setContentText(resources.getString("about.content"));
         alert.showAndWait();
     }
 
     @FXML
     public void openTicTacToe() throws Exception {
-        loadFxmlService.load("/views/ticTacToe.fxml", "Tic Tac Toe");
+        loadFxmlService.load("/views/ticTacToe.fxml", resources.getString("menu.games.tictactoe"), resources);
     }
 
     @FXML
     public void openTicTacToe2() throws Exception {
-        loadFxmlService.load("/views/ticTacToe2.fxml", "Tic Tac Toe 2");
+        loadFxmlService.load("/views/ticTacToe2.fxml", resources.getString("menu.games.tictactoe2"), resources);
     }
 
     @FXML
     public void openBomberMan() throws Exception {
-        loadFxmlService.load("/views/bomberman.fxml", "Bomber Man");
+        loadFxmlService.load("/views/bomberman.fxml", resources.getString("menu.games.bomberman"), resources);
     }
 
     @FXML
     public void openCheckers() throws Exception {
-        loadFxmlService.load("/views/checkers.fxml", "Checkers");
+        loadFxmlService.load("/views/checkers.fxml", resources.getString("menu.games.checkers"), resources);
     }
 
     @FXML
     public void openMinesweeper() throws Exception {
-        loadFxmlService.load("/views/minesweeper.fxml", "Minesweeper");
+        loadFxmlService.load("/views/minesweeper.fxml", resources.getString("menu.games.minesweeper"), resources);
     }
 
     @FXML
     public void openMatrixEffect() throws Exception {
-        loadFxmlService.load("/views/matrixEffect.fxml", "Matrix Effect");
+        loadFxmlService.load("/views/matrixEffect.fxml", resources.getString("menu.screensavers.matrix"), resources);
     }
 
     @FXML
     public void openJavaFx3DFirstScene() throws Exception {
-        loadFxmlService.load("/views/javaFx3DFirstScene.fxml", "JavaFX 3D First Scene");
+        loadFxmlService.load("/views/javaFx3DFirstScene.fxml", resources.getString("menu.3d.first"), resources);
     }
 
     @FXML
     public void openBase64EncoderDecoder() throws Exception {
-        loadFxmlService.load("/views/base64EncoderDecoder.fxml", "Base64 Encoder/Decoder");
+        loadFxmlService.load("/views/base64EncoderDecoder.fxml", resources.getString("menu.utils.base64"), resources);
     }
 
     @FXML
     public void openJwtDecoder() throws Exception {
-        loadFxmlService.load("/views/jwtDecoder.fxml", "Jwt Decoder");
+        loadFxmlService.load("/views/jwtDecoder.fxml", resources.getString("menu.utils.jwt"), resources);
     }
 
     @FXML
@@ -183,7 +301,7 @@ public class MainController {
             @Override
             protected Void call() throws Exception {
 
-                updateMessage("Processing...");
+                updateMessage(resources.getString("status.processing"));
                 updateProgress(0, 100);
 
                 for (int i = 1; i <= 100; i++) {
@@ -191,7 +309,7 @@ public class MainController {
                     updateProgress(i, 100);
                 }
 
-                updateMessage("Completed!");
+                updateMessage(resources.getString("status.completed"));
                 return null;
             }
         };
@@ -200,13 +318,13 @@ public class MainController {
         statusLabel.textProperty().bind(task.messageProperty());
 
         progressBar.setVisible(true);
-        rightStatusLabel.setText("Working...");
+        rightStatusLabel.setText(resources.getString("status.working"));
 
         task.setOnSucceeded(e -> {
             progressBar.setVisible(false);
             progressBar.progressProperty().unbind();
             statusLabel.textProperty().unbind();
-            rightStatusLabel.setText("Done");
+            rightStatusLabel.setText(resources.getString("status.done"));
         });
 
         new Thread(task).start();
