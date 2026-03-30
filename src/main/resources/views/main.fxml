@@ -41,6 +41,9 @@
                 <MenuItem text="Base64 Encoder/Decoder" onAction="#openBase64EncoderDecoder"/>
                 <MenuItem text="Jwt Decoder" onAction="#openJwtDecoder"/>
             </Menu>
+            <Menu text="Settings">
+                <Menu fx:id="languageMenu" text="Language"/>
+            </Menu>
             <Menu text="About">
                 <MenuItem text="About" onAction="#onAbout"/>
             </Menu>
@@ -74,6 +77,12 @@
                          visible="false"/>
 
             <Region HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="languageLabel"
+                   text="🌐"
+                   minWidth="20"
+                   alignment="CENTER"
+                   styleClass="status-right"/>
 
             <Label fx:id="rightStatusLabel"
                    text="Idle"

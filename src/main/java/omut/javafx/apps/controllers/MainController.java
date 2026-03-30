@@ -7,10 +7,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.util.Duration;
+import omut.javafx.apps.model.Language;
+import omut.javafx.apps.service.LanguageService;
 import omut.javafx.apps.service.LoadFxmlService;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -21,11 +21,14 @@ import org.springframework.stereotype.Component;
 public class MainController {
 
     private final LoadFxmlService loadFxmlService;
+    private final LanguageService languageService;
 
     public MainController(
-            LoadFxmlService loadFxmlService
+            LoadFxmlService loadFxmlService,
+            LanguageService languageService
     ) {
         this.loadFxmlService = loadFxmlService;
+        this.languageService = languageService;
     }
     @FXML private Label label;
 
@@ -37,6 +40,12 @@ public class MainController {
 
     @FXML
     private Label timeLabel;
+
+    @FXML
+    private Label languageLabel;
+
+    @FXML
+    private Menu languageMenu;
 
     @FXML
     private ProgressBar progressBar;
@@ -51,6 +60,41 @@ public class MainController {
         );
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+        setupLanguageMenu();
+        setupLanguageIndicator();
+    }
+
+    private void setupLanguageMenu() {
+        for (Language lang : Language.values()) {
+            MenuItem item = new MenuItem(lang.getDisplayName());
+            item.setOnAction(e -> languageService.setCurrentLanguage(lang));
+            languageMenu.getItems().add(item);
+        }
+    }
+
+    private void setupLanguageIndicator() {
+        ContextMenu contextMenu = new ContextMenu();
+        for (Language lang : Language.values()) {
+            MenuItem item = new MenuItem(lang.getDisplayName());
+            item.setOnAction(e -> languageService.setCurrentLanguage(lang));
+            contextMenu.getItems().add(item);
+        }
+
+        languageLabel.setOnMouseClicked(event -> {
+            contextMenu.show(languageLabel, event.getScreenX(), event.getScreenY());
+        });
+
+        languageService.currentLanguageProperty().addListener((obs, oldLang, newLang) -> {
+            updateLanguageIndicator(newLang);
+        });
+
+        updateLanguageIndicator(languageService.getCurrentLanguage());
+    }
+
+    private void updateLanguageIndicator(Language lang) {
+        languageLabel.setText("🌐 " + lang.getLocale().getLanguage().toUpperCase());
+        Tooltip.install(languageLabel, new Tooltip(lang.getDisplayName()));
     }
 
     private void updateTime() {
