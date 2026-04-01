@@ -30,6 +30,7 @@
                 <MenuItem fx:id="bombermanItem" text="%menu.games.bomberman" onAction="#openBomberMan"/>
                 <MenuItem fx:id="checkersItem" text="%menu.games.checkers" onAction="#openCheckers"/>
                 <MenuItem fx:id="minesweeperItem" text="%menu.games.minesweeper" onAction="#openMinesweeper"/>
+                <MenuItem fx:id="tetrisItem" text="%menu.games.tetris" onAction="#openTetris"/>
             </Menu>
             <Menu fx:id="screensaversMenu" text="%menu.screensavers">
                 <MenuItem fx:id="matrixItem" text="%menu.screensavers.matrix" onAction="#openMatrixEffect"/>

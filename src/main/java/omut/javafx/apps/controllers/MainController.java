@@ -80,6 +80,9 @@ public class MainController {
     private MenuItem minesweeperItem;
 
     @FXML
+    private MenuItem tetrisItem;
+
+    @FXML
     private Menu screensaversMenu;
 
     @FXML
@@ -183,6 +186,7 @@ public class MainController {
         bombermanItem.setText(resources.getString("menu.games.bomberman"));
         checkersItem.setText(resources.getString("menu.games.checkers"));
         minesweeperItem.setText(resources.getString("menu.games.minesweeper"));
+        tetrisItem.setText(resources.getString("menu.games.tetris"));
 
         screensaversMenu.setText(resources.getString("menu.screensavers"));
         matrixItem.setText(resources.getString("menu.screensavers.matrix"));
@@ -272,6 +276,11 @@ public class MainController {
     @FXML
     public void openMinesweeper() throws Exception {
         loadFxmlService.load("/views/minesweeper.fxml", resources.getString("menu.games.minesweeper"), resources);
+    }
+
+    @FXML
+    public void openTetris() throws Exception {
+        loadFxmlService.load("/views/tetris.fxml", resources.getString("menu.games.tetris"), resources);
     }
 
     @FXML
