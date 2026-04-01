@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
@@ -101,7 +102,9 @@ public class ClockScreensaverController implements Initializable {
 
     private void updateStatusLabel() {
         if (resources != null) {
-            String mode = showDigital ? resources.getString("clock.digital") : resources.getString("clock.analog");
+            String mode = showDigital
+                    ? resources.getString("clock.digital")
+                    : resources.getString("clock.analog");
             statusLabel.setText(mode + " - " + resources.getString("clock.switch"));
         }
     }
@@ -124,6 +127,8 @@ public class ClockScreensaverController implements Initializable {
 
     private void drawDigitalClock(GraphicsContext gc, LocalTime time) {
         String timeStr = time.format(timeFormatter);
+        ZoneId zoneId = ZoneId.systemDefault();
+        String timezoneStr = resources.getString("clock.timezone") + ": " + zoneId.getId();
 
         gc.setFont(Font.font("Arial", 200));
         gc.setFill(Color.web("#00FF00"));
@@ -134,6 +139,12 @@ public class ClockScreensaverController implements Initializable {
         // Manually center text
         double textWidth = timeStr.length() * 100; // approximate width for Arial 200
         gc.fillText(timeStr, centerX - textWidth / 2, centerY + 60);
+
+        // Draw timezone below the time
+        gc.setFont(Font.font("Arial", 40));
+        gc.setFill(Color.web("#00AA00"));
+        double tzTextWidth = timezoneStr.length() * 20;
+        gc.fillText(timezoneStr, centerX - tzTextWidth / 2, centerY + 120);
 
         // Draw milliseconds as a moving bar
         int millis = time.getNano() / 1_000_000;
@@ -208,6 +219,14 @@ public class ClockScreensaverController implements Initializable {
         // Manually center text
         double textWidth = timeStr.length() * 15;
         gc.fillText(timeStr, centerX - textWidth / 2, centerY + radius + 50);
+
+        // Draw timezone below the time
+        ZoneId zoneId = ZoneId.systemDefault();
+        String timezoneStr = resources.getString("clock.timezone") + ": " + zoneId.getId();
+        gc.setFont(Font.font("Arial", 24));
+        gc.setFill(Color.web("#00AA00"));
+        double tzTextWidth = timezoneStr.length() * 12;
+        gc.fillText(timezoneStr, centerX - tzTextWidth / 2, centerY + radius + 90);
     }
 
     private void drawHand(GraphicsContext gc, double centerX, double centerY, double angle, double length) {
@@ -216,9 +235,4 @@ public class ClockScreensaverController implements Initializable {
         gc.strokeLine(centerX, centerY, x, y);
     }
 
-    public void stopAnimation() {
-        if (animationTimer != null) {
-            animationTimer.stop();
-        }
-    }
 }
