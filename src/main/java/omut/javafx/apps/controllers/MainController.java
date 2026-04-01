@@ -89,6 +89,9 @@ public class MainController {
     private MenuItem matrixItem;
 
     @FXML
+    private MenuItem clockItem;
+
+    @FXML
     private Menu threeDMenu;
 
     @FXML
@@ -190,6 +193,7 @@ public class MainController {
 
         screensaversMenu.setText(resources.getString("menu.screensavers"));
         matrixItem.setText(resources.getString("menu.screensavers.matrix"));
+        clockItem.setText(resources.getString("menu.screensavers.clock"));
 
         threeDMenu.setText(resources.getString("menu.3d"));
         threeDFirstItem.setText(resources.getString("menu.3d.first"));
@@ -286,6 +290,11 @@ public class MainController {
     @FXML
     public void openMatrixEffect() throws Exception {
         loadFxmlService.load("/views/matrixEffect.fxml", resources.getString("menu.screensavers.matrix"), resources);
+    }
+
+    @FXML
+    public void openClockScreensaver() throws Exception {
+        loadFxmlService.load("/views/clockScreensaver.fxml", resources.getString("menu.screensavers.clock"), resources);
     }
 
     @FXML

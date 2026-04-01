@@ -34,6 +34,7 @@
             </Menu>
             <Menu fx:id="screensaversMenu" text="%menu.screensavers">
                 <MenuItem fx:id="matrixItem" text="%menu.screensavers.matrix" onAction="#openMatrixEffect"/>
+                <MenuItem fx:id="clockItem" text="%menu.screensavers.clock" onAction="#openClockScreensaver"/>
             </Menu>
             <Menu fx:id="threeDMenu" text="%menu.3d">
                 <MenuItem fx:id="threeDFirstItem" text="%menu.3d.first" onAction="#openJavaFx3DFirstScene"/>
